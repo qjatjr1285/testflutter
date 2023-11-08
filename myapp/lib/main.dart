@@ -20,9 +20,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => MyHomePage(title: '',),
-        '/rental': (context) => Rental(),
-        '/buy': (context) => Buy(),
+        '/rental': (context) => const Rental(),
+        '/buy': (context) => const Buy(),
       },
       initialRoute: '/',
       home: const MyHomePage(title: 'Test title'),
@@ -41,12 +40,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-
-  void _incrementCounter() {
-    setState(() {
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const Rental()),
                 );
-              }, child: const Text('대여')),
+              }, 
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(300, 50)
+              ), 
+              child: const Text('대여'),
+              ),
             ElevatedButton(
               onPressed: (){
                 Navigator.push(context,
@@ -74,35 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
           ],)
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: (int index){
-            switch (index) {
-              case 0:
-                Navigator.pushNamed(context, '/rental');
-                break;
-              case 1:
-                Navigator.pushNamed(context, '/');
-                break;
-              case 2:
-                Navigator.pushNamed(context, '/buy');
-                break;
-              case 3:
-                Navigator.pushNamed(context, '/');
-                break;
-              case 4:
-                Navigator.pushNamed(context, '/');
-                break;
-              default:
-            }
-          },
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.abc), label: '대여'),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-            BottomNavigationBarItem(icon: Icon(Icons.credit_card), label: '구매'),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: '장바구니'),
-            BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: '내 정보'),
-          ],
-          )
     );
   }
 }
