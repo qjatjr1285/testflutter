@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/menu_bottom.dart';
 
 class Buy extends StatefulWidget {
   const Buy({super.key});
@@ -14,7 +15,7 @@ class _BuyState extends State<Buy> {
       appBar: AppBar(
         title: Text('구매'),
       ),
-      
+      bottomNavigationBar: MenuBottom(),
     );
     
   }

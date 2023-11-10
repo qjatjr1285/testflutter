@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/menu_bottom.dart';
 
 import 'rental.dart';
 import 'buy.dart';
@@ -47,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
+      bottomNavigationBar: MenuBottom(),
       body: Center(
         
         child: Row(

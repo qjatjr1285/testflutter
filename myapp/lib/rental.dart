@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:myapp/menu_bottom.dart';
 class Rental extends StatefulWidget {
   const Rental({super.key});
 
@@ -14,6 +14,7 @@ class _RentalState extends State<Rental> {
       appBar: AppBar(
         title: Text('대여'),
       ),
+      bottomNavigationBar: MenuBottom(),
       
     );
   }
